@@ -1,0 +1,2 @@
+v. 1.0.1:
+handled user json error, error details in log.txt
