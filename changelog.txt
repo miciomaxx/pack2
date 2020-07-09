@@ -1,2 +1,7 @@
+v. 1.0.2:
+- added gzip validation on incoming files;
+- handled json error on incoming files;
+- code optimization and version compatible with 32bit environments
+
 v. 1.0.1:
-handled user json error before packing files, error details in log.txt
+- handled user json error before packing files, error details in log.txt
