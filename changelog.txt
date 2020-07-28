@@ -1,3 +1,7 @@
+v. 2.0.1:
+- organized destination files into folders
+- removed check on .old packing
+
 v. 2.0.0:
 - corrected wrong heuristic detection
 
@@ -5,8 +9,8 @@ v. 1.0.3:
 - trying correct wrong heuristic detection 
 
 v. 1.0.2:
-- added gzip validation on incoming files;
-- handled json error on incoming files;
+- added gzip validation on incoming files
+- handled json error on incoming files
 - code optimization and version compatible with 32bit environments
 
 v. 1.0.1:
