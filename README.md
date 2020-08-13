@@ -1,7 +1,7 @@
 # pack2
 pack2
 
-new csrpacker2 by Mo DieSse 
+new csrpacker2 
 
 instructions for windows pc:
 - no needs to open cmd dos prompt;
@@ -18,4 +18,4 @@ instructions for windows pc:
 - check for json errors;
 - log.txt is created and contains log for check and issues report.
 
-free to use and distribute this file readme.md and csrpacker2.exe without any modify. 
+
