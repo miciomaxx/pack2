@@ -11,7 +11,6 @@ writer2 = open('log.txt', 'w')
 workdone = False
 nsbcrc32 = 0
 
-
 def spack(fileuno):
     with open1(fileuno, 'rb') as f:
             file_content = f.readline()
@@ -24,7 +23,6 @@ def spack(fileuno):
     writer1.write(file_pret)
     writer1.close()
     
-
 def pack(fileuno):
     writer1 = open('Decrypted/'+fileuno + '.txt', 'r', encoding='utf8')
     file_pret = writer1.read()
@@ -37,17 +35,15 @@ def pack(fileuno):
         writer2.write(str(err))
         raise SystemExit(err)
 
-
-
-
     if fileuno == '8ed9e902c5c024bfb899e99893d4eb525d3ad179':
-        x = 0
-        while x == 0:
-            if json_data['profileSaveHashes'][x]['playerID'] == json_data['userid']:
-                json_data['profileSaveHashes'][x]['CRC'] = str(nsbcrc32)
-                break
-            else:
-                del json_data['profileSaveHashes'][x]
+        try:
+            json_data['profileSaveHashes'][0]['playerID'] = json_data['userid']
+            json_data['profileSaveHashes'][0]['CRC'] = str(nsbcrc32)
+            del json_data['profileSaveHashes'][1]
+            del json_data['profileSaveHashes'][1]
+            del json_data['profileSaveHashes'][1]
+        except:
+            writer2.write(': crc updated')
 
     json_string = dumps(json_data, ensure_ascii=True, separators=(',', ":"))
     file4crc32 = json_string.encode('utf8')
@@ -61,8 +57,6 @@ def pack(fileuno):
         f2.write(file4crc32)
         f2.close()
     return crc32_file
-
-
 
 if path.exists('nsb'):
     if not path.exists('Original'):
@@ -125,6 +119,5 @@ if path.exists('Decrypted/8ed9e902c5c024bfb899e99893d4eb525d3ad179.txt'):
 
 else:
     writer2.write(': missing 3rd file\n\r')
-
 
 writer2.close()

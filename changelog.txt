@@ -1,3 +1,6 @@
+v. 2.0.2:
+- improved iteration updating CRC
+
 v. 2.0.1:
 - organized destination files into folders
 - removed check on .old packing

@@ -1,7 +1,6 @@
 # pack2
-pack2
 
-new csrpacker2 
+csrpacker2 
 
 instructions:
 - need python installed;
@@ -18,5 +17,4 @@ instructions:
 - crc32 is automatically calculated and inserted on right file and "temp" user is automatically deleted;
 - check for json errors;
 - log.txt is created and contains log for check and issues report.
-
 
