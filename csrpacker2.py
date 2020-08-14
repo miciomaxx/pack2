@@ -37,6 +37,7 @@ def pack(fileuno):
 
     if fileuno == '8ed9e902c5c024bfb899e99893d4eb525d3ad179':
         try:
+            json_data['profileSaveHashes'] = {}
             json_data['profileSaveHashes'] = {'playerID': json_data['userid'], 'CRC': str(nsbcrc32)}
             writer2.write(': crc updated')
         except:
