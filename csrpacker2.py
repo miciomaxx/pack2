@@ -37,19 +37,16 @@ def pack(fileuno):
 
     if fileuno == '8ed9e902c5c024bfb899e99893d4eb525d3ad179':
         try:
-            json_data['profileSaveHashes'][0]['playerID'] = json_data['userid']
-            json_data['profileSaveHashes'][0]['CRC'] = str(nsbcrc32)
-            del json_data['profileSaveHashes'][1]
-            del json_data['profileSaveHashes'][1]
-            del json_data['profileSaveHashes'][1]
-        except:
+            json_data['profileSaveHashes'] = {'playerID': json_data['userid'], 'CRC': str(nsbcrc32)}
             writer2.write(': crc updated')
+        except:
+            writer2.write(': crc not updated')
 
     json_string = dumps(json_data, ensure_ascii=True, separators=(',', ":"))
     file4crc32 = json_string.encode('utf8')
     crc32_file = crc32(file4crc32)
-    secretKeyBytes = bytearray([52, 99, 80, 119, 51, 90, 121, 67])
-    dig2 = new(secretKeyBytes, file4crc32, sha1).hexdigest()
+    secretkeybytes = bytearray([52, 99, 80, 119, 51, 90, 121, 67])
+    dig2 = new(secretkeybytes, file4crc32, sha1).hexdigest()
 
     with open1('Finished/'+fileuno, 'a') as f2:
         f2.write(bytes(dig2, 'utf8'))
@@ -92,8 +89,7 @@ if workdone:
     writer2.write('unpacking completed\n\r\n\r')
     writer2.close()
     exit()
-    # exit(code=0)
-
+    
 if path.exists('Decrypted/nsb.txt'):
     writer2.write('nothing to unpack: trying to pack nsb.txt file')
     if not path.exists('Finished'):
