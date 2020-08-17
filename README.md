@@ -1,6 +1,5 @@
 # pack2
 
-
 csrpacker2 
 
 version:
@@ -14,12 +13,12 @@ features:
 
 instructions:
 - put csrpacker2 in a directory of your choice;
-  1st pass:
+- 1st pass:
   - put in nsb, scb, 8ed9e902c5c024bfb899e99893d4eb525d3ad179 or trb files as they come from csr2 game;
   - double click on csrpacker2;
   - original files are renamed as .old and put in Original folder;
   - new files are created as .txt in Decrypted folder; they are in ready prettyfied text;
-  2nd pass:
+- 2nd pass:
   - after modifying .txt, save them and don't rename them; no needs to minify;
   - double click on csrpacker2;
   - new files are created without extension ready to use in Finished folder;
