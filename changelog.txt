@@ -1,3 +1,6 @@
+v. 3.0.1:
+- patch for iOS files
+
 v. 3.0.0:
 - code optimization (thanks to Raffaele)
 - removed crc calculation as irrelevant
